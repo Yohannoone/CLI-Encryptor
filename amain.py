@@ -7,11 +7,12 @@ print('Hey Friend.' \
 
 choosen_number = int(input('Pick one of these numbers'))
 from ceaser import ceaser_cipher
+from luhn import check_card
 if choosen_number == 1 :
     ceaser_cipher()
 elif choosen_number == 2:
     print('Viginere Cipher')
 elif choosen_number == 3:
-    print('Check Card Number')
+    check_card()
 else:
     print('Naaah, try again.')
