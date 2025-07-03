@@ -6,13 +6,14 @@ print('Hey Friend.' \
 '3- Check Card Number')
 
 choosen_number = int(input('Pick one of these numbers'))
-from ceaser import ceaser_cipher
 from luhn import check_card
+from ceaser import ceaser_cipher
+from viginer import viginer_cipher
 if choosen_number == 1 :
-    ceaser_cipher()
+    print(ceaser_cipher())
 elif choosen_number == 2:
-    print('Viginere Cipher')
+    print(viginer_cipher())
 elif choosen_number == 3:
-    check_card()
+    print(check_card())
 else:
     print('Naaah, try again.')

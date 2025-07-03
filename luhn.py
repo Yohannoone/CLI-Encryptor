@@ -1,2 +1,3 @@
 def check_card():
-    print('Lets check your Card Number')
+    check = 'Lets check your Card Number'
+    return check
