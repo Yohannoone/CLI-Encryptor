@@ -11,5 +11,3 @@ def ceaser_cipher(message, shift_number):
             new_message += new_letter
     return new_message
 
-translted = 'AAA'
-print(ceaser_cipher(translted, 3))
