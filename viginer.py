@@ -39,6 +39,7 @@ def viginer_handler():
     # Asking for the choice of user if he wants to enc or dec.
     if not key_mess.isalpha():
         print('the key should be letters not numbers or something else.')
+        # Now, if the user enters numbers, return will stop the code from running further.
         return
     type_enc = int(input('if you want to encrypt press 1, if you to decrypt press 2.'))
     if type_enc == 1:
@@ -49,6 +50,3 @@ def viginer_handler():
     else:
         print('chooose just 1 or 2.')
     return viginer_cipher(message, key_mess, direction)
-
-
-print(viginer_handler())    
