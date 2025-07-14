@@ -36,7 +36,7 @@ def check_card(card_number):
     if sum_of_all % 10 == 0:
         return 'Valid Card!'
     else:
-        return 'Nope Not Real, Maybe you got to double Check if you are writing it correctly'
+        return 'is not Real, Maybe you got to double Check if you are writing it correctly'
 
 
 # This function cleans input and checks if it’s valid before verification.
@@ -67,7 +67,4 @@ def luhn_handler():
         print('That is too much for a Card number, try again')
         return
     
-    return check_card(card_translated)
-
-print(luhn_handler())
-
+    return f'your Card Number is {card_translated} after cleaning it, and after checking it it turns that your Card {check_card(card_translated)}'
