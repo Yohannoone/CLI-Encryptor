@@ -73,5 +73,3 @@ def luhn_handler():
         return
     
     return f'your Card Number is {card_translated} after cleaning it, and after checking it it turns that your Card {check_card(card_translated)}'
-
-print(luhn_handler())
