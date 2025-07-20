@@ -44,6 +44,11 @@ def luhn_handler():
 
     card_num = input('Enter you Card Number.')
 
+    # Ensures the input contains only digits, spaces, and dashes—not letters or other characters.
+    if card_num.isalpha():
+        print('You can use just digits and - and spaces, nothing else.')
+        return
+
     # The next lines act as a filter to remove spaces and dashes.
     card_key_translation = str.maketrans({' ' : '', '-' : ''})
     card_translated = card_num.translate(card_key_translation)
@@ -68,3 +73,5 @@ def luhn_handler():
         return
     
     return f'your Card Number is {card_translated} after cleaning it, and after checking it it turns that your Card {check_card(card_translated)}'
+
+print(luhn_handler())

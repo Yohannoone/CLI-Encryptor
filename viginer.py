@@ -39,6 +39,12 @@ def viginer_handler():
 
     # Obtain the message input for encryption or decryption.
     message = input('Write the message you want to encrypt')
+    # Ensures the Message is alphabetic; if not, prints a message and stops the code.
+    if not message.isalpha():
+         print('the Message should be letters not numbers or something else.')
+        # Now, if the user enters numbers, return will stop the code from running further.
+         return
+        
     
     # Two choices: 1 for encryption, 2 for decryption (using * -1). Otherwise, it does nothing but prints the message inside the else block.
     key_mess = input('Write the key for encryption or decryption.')
@@ -50,22 +56,38 @@ def viginer_handler():
 
     # Ensures the key is alphabetic; if not, prints a message and stops the code.
     if not key_mess.isalpha():
-        print('the key should be letters not numbers or something else.')
+        print('the Key Message should be letters not numbers or something else.')
 
         # Now, if the user enters numbers, return will stop the code from running further.
         return
     
-    # This converts the user's choice to an integer to select encryption or decryption.
-    type_enc = int(input('if you want to encrypt press 1, if you to decrypt press 2.'))
-    if type_enc == 1:
-        direction =  1
-    elif type_enc == 2:
-        direction = -1
+    # this takes the user input.
+    type_enc =  input('if you want to encrypt press 1, if you to decrypt press 2.')
+    type_translation = str.maketrans({' ' : ''})
+    type_translated = type_enc.translate(type_translation)
+
+    # Checks if the string contains only digits.
+    if type_translated.isdigit():
+
+        # Converts type_translated to an integer and assigns it to the number variable.
+        number = int(type_translated)
+        if number == 1:
+            direction =  1
+        elif number == 2:
+            direction = -1
+
+        # If the user enters a number other than 1 or 2, it prints the following message.
+        else:
+            print('choose just 1 or 2.')
+            return
+        
+    # If the user enters anything other than numbers, it prints the following message.
+    else:
+        print('Do not print letters or anything else, just digits(1 or 2).')
+        return
 
     
     # This informs the user not to use numbers; if they do, they should choose letters instead.
-    else:
-        print('chooose just 1 or 2.')
     
     # To make it user-friendly, I decided to add some flair to the code for the user.
     print(f'your Message is {message} and your key message is {key_mess}. and you Numcryption is {type_enc}')
@@ -75,5 +97,3 @@ def viginer_handler():
 
 
     return f' The Result is {viginer_cipher(message, key_mess, direction)}'
-
-print(viginer_handler())
